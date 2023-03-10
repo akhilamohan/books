@@ -30,7 +30,7 @@ curl -i -X POST -H  'Accept: application/json' http://localhost:3000/api/books -
 #### Response
 ```
 HTTP/1.1 201 Created
-Location: /api/books/id-123
+Location: /api/book/id-123
 Date: Fri, 10 Mar 2023 11:06:38 GMT
 Content-Length: 0
 ```
