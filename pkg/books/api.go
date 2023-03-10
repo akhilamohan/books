@@ -9,6 +9,7 @@ import (
 	"strings"
 )
 
+// Handler function for get list of books and add book
 func BooksHandler(w http.ResponseWriter, r *http.Request) {
 	switch method := r.Method; method {
 	case http.MethodGet:
@@ -51,6 +52,7 @@ func BooksHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// Handler function for get, delete, update book by id
 func BookHandler(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	id := strings.ToLower(params["id"])

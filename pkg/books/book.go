@@ -22,12 +22,14 @@ func init() {
 	books = make(map[string]Book)
 }
 
+// Clear books
 func EmptyBooks() {
 	for k := range books {
 		delete(books, k)
 	}
 }
 
+// return all books in list
 func GetAllBooks() []Book {
 	var allbooks []Book
 	for _, book := range books {
@@ -36,6 +38,7 @@ func GetAllBooks() []Book {
 	return allbooks
 }
 
+// Add a book to list
 func CreateBook(book Book) (string, bool) {
 	_, ok := books[book.ID]
 	if ok {
@@ -45,6 +48,7 @@ func CreateBook(book Book) (string, bool) {
 	return book.ID, true
 }
 
+// Returns book of given id
 func GetBook(id string) (Book, bool) {
 	book, ok := books[id]
 	if !ok {
@@ -53,6 +57,7 @@ func GetBook(id string) (Book, bool) {
 	return book, true
 }
 
+// Update book with given id
 func UpdateBook(id string, book Book) (string, bool) {
 	_, ok := books[id]
 	if !ok {
@@ -63,6 +68,7 @@ func UpdateBook(id string, book Book) (string, bool) {
 	return book.ID, true
 }
 
+// Delete book with given id
 func DeleteBook(id string) bool {
 	_, ok := books[id]
 	if !ok {
