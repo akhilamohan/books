@@ -38,7 +38,7 @@ func BooksHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		id, created := CreateBook(book)
 		if created {
-			w.Header().Add("Location", "/api/books/"+id)
+			w.Header().Add("Location", "/api/book/"+id)
 			w.WriteHeader(http.StatusCreated)
 		} else {
 			w.WriteHeader(http.StatusConflict)
@@ -87,7 +87,7 @@ func BookHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		newid, updated := UpdateBook(id, book)
 		if updated {
-			w.Header().Add("Location", "/api/books/"+newid)
+			w.Header().Add("Location", "/api/book/"+newid)
 			w.WriteHeader(http.StatusOK)
 		} else {
 			w.WriteHeader(http.StatusNotFound)
